@@ -1,7 +1,7 @@
 /*
 Josh Samson - Seltzer
 ICS CLass, 2013
-Assignment 2
+Assignment 3 - File Sort w/ Tokens
 */
 
 
@@ -44,12 +44,12 @@ int main(int argc, char** argv) {
 	int i = 0;
 	char* tkn;
 	while(fgets(line, 128, fp) != NULL) {
-		tkn=strtok (line, ",");
+		tkn=strtok (line, " ,\n");
 		while (tkn!=NULL)
 		{
 			list[i]=atoi(tkn);
-			strtok (NULL, ",");
-
+			tkn=strtok (NULL, " ,\n");
+			i++;
 		}
 		list[i] = atoi(line);
 		i++;
